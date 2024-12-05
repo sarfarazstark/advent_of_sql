@@ -11,7 +11,7 @@ FROM (
         END AS guest_count,
         xpath('//food_item_id/text()', menu_data)::varchar[] AS food_items
     FROM christmas_menus
-)
+) as gcfi
 WHERE guest_count > 78
 GROUP BY items
 ORDER BY frequency DESC
